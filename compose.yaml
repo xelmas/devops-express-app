@@ -1,0 +1,8 @@
+services:
+  watchtower:
+    image: nickfedor/watchtower
+    command: --interval 60 express-app
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    container_name: watchtower
+    restart: unless-stopped
